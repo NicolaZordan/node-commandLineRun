@@ -7,7 +7,7 @@ var commandLineRun=require('./commandLineRun');
 
 //commandLineRun.run({
 //commandLineRun({  // package does not work returning teh function only
-commandLineRun.run({
+commandLineRun({
     "logExample": console.log,
     "log": console.log,
     "write": function () { console.log("writing:",Array.from(arguments)); },

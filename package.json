@@ -1,8 +1,8 @@
 {
   "name": "commandlinerun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "run nodejs app from command line simplified",
-  "main": "commandLineRunTest.js",
+  "main": "commandLineRun.js",
   "scripts": {
     "test": "node commandLineRunTest.js write \"write this out\" secondParameter"
   },
