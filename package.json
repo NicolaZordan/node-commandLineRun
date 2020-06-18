@@ -1,6 +1,6 @@
 {
   "name": "commandlinerun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "run nodejs app from command line simplified",
   "main": "commandLineRunTest.js",
   "scripts": {
