@@ -1,0 +1,27 @@
+{
+  "name": "commandlinerun",
+  "version": "1.0.0",
+  "description": "run nodejs app from command line simplified",
+  "main": "commandLineRunTest.js",
+  "scripts": {
+    "test": "node commandLineRunTest.js write \"write this out\" secondParameter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolaZordan/node-commandLineRun.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "command",
+    "line",
+    "parameters",
+    "run"
+  ],
+  "author": "Nicola Zordan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolaZordan/node-commandLineRun/issues"
+  },
+  "homepage": "https://github.com/NicolaZordan/node-commandLineRun#readme"
+}
