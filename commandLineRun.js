@@ -46,7 +46,9 @@ var commandLineRun = {
 };
 
 //
-module.exports=commandLineRun.run;
+//module.exports=commandLineRun.run;
+// package does not work if returning the function only
+module.exports=commandLineRun;
 
 // Example:
 

@@ -1,13 +1,14 @@
-// Command Line execution Test
+// Command Line execution Example
 // Nicola Zordan 6/18/2020
 
+// must install to use this
+// npm install commandlinerun
 
 // execution
-var commandLineRun=require('./commandLineRun');
+var commandLineRun=require('commandlinerun');
 
 //commandLineRun.run({
-//commandLineRun({  // package does not work returning teh function only
-commandLineRun.run({
+commandLineRun({
     "logExample": console.log,
     "log": console.log,
     "write": function () { console.log("writing:",Array.from(arguments)); },
@@ -15,4 +16,4 @@ commandLineRun.run({
     "concat": function () {console.log("contatenating parameters:",Array.from(arguments).join(''))},
 });
 //// usage from the command line
-// node file.js log "this is an example of" commandLine execution
+// node commandLineRunExample.js log "this is an example of" commandLine execution
