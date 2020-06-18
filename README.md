@@ -6,7 +6,7 @@ info@Zordan.net
 6/18/2020
 
 ## abstract
-Allows an easy way to run different application entry pointsfrom running the command line
+Allows an easy way to run different application entry points from running the command line
 
 ## Requirement
 Writing nodejs apps we need to test and execute parts of the application with different entry points, passing parameters to allow execution 
@@ -17,7 +17,7 @@ for example:
 - test a specific portion of the app
 
 ## Solution
-commandLineRun allows you to specify what function shoudl be run when a command line is specified form the command line
+commandLineRun allows you to specify what function should be run when a command line is specified form the command line
 
 ### Examples form the command line
 Assuming your app has an app.js file
@@ -37,7 +37,7 @@ to use commandLineRun is simple
 2. execute it passing the object that describe the actions
 
 ### Action mapping object to be passed
-The action mapping object to be passed is a simple object that to each element matches a function to execute, the property name will be used to identify the command from teh command line that will execute the corresponding function
+The action mapping object to be passed is a simple object that to each element matches a function to execute, the property name will be used to identify the command from the command line that will execute the corresponding function
 
 ```javascript
 {
@@ -68,6 +68,6 @@ commandLineRun({
 ### Run
 Invoking commandLineRun 
 1. gets the data from the command line, 
-2. find teh matching command
+2. find the matching command
 3. execute the function specified in the action mapping object, passing the parameters from the command line
 
