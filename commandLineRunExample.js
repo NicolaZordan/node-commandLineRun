@@ -4,10 +4,10 @@
 // must install to use this
 // npm install commandlinerun
 
-// execution
+// load nmodule
 var commandLineRun=require('commandlinerun');
 
-//commandLineRun.run({
+// execuution
 commandLineRun({
     "logExample": console.log,
     "log": console.log,
@@ -15,5 +15,5 @@ commandLineRun({
     "write1": function (first) { console.log("writing1:",first); },    
     "concat": function () {console.log("contatenating parameters:",Array.from(arguments).join(''))},
 });
-//// usage from the command line
+// usage from the command line
 // node commandLineRunExample.js log "this is an example of" commandLine execution

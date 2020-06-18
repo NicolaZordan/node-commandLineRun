@@ -45,7 +45,7 @@ var commandLineRun = {
   },
 };
 
-//
+// module
 module.exports=commandLineRun.run;
 
 // Example:
