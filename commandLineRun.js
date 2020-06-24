@@ -66,7 +66,7 @@ var commandLineRun = {
       //lc.push(cs);
       o=commands[c];
       if (typeof(o)=='function') lc.push(cs);
-      if (typeof(o)=='object') {
+      if (o!=null && typeof(o)=='object') {
         lo=commandLineRun.commandsList(o,cs+'.');
         lc=lc.concat(lo);
       };

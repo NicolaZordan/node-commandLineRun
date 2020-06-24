@@ -19,6 +19,7 @@ commandLineRun({
             "log": console.log,
         },
         "nofunction": null,
+        "nostring": 'a.nostring',
     },
 });
 // usage from the command line
