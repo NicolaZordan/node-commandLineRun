@@ -5,7 +5,7 @@ Nicola Zordan
 info@Zordan.net 
 6/18/2020
 
-## abstract
+## Abstract
 Allows an easy way to run different application entry points from running the command line
 
 ## Requirement
@@ -23,7 +23,7 @@ commandLineRun allows you to specify what function should be run when a command 
 Assuming your app has an app.js file
 - node app.js log "write this in the log"
 - node app.js deleteKey 1234
-- node app.js test a b c
+- node app.js test first second third
 - node app.js startServer
 - node app.js startServer 8000 localhost
 - node app.js displayConfiguration
@@ -52,6 +52,37 @@ The action mapping object to be passed is a simple object that to each element m
 }
 ```
 
+#### Nested Objects
+Nesting allows to define groupig of entry points by app area
+
+It is possible to specify nested objects when defining the action mapping object, nested object functions to call can be accessed with the dot notation:
+
+on the example below:
+- sales.report
+- sales.bonues.person
+
+Note that if in the action mapping object an end point is specified that is not a funtion, it will not be executed.
+If teh command entered in the command line does not match a valid function a message will be displayed, and the list of available defined commands will be shown
+
+```javascript
+{
+    "log": console.log,
+    "run": app.run,
+    "startServer": app.start,
+    "eraseCache": app.clearCache,
+    "deleteKey": app.deleteKey,
+    "sales": {
+        "report": console.log,
+        "bonuses": {
+            "person": function () {console.log('3rd level')},
+            "log": console.log,
+        },
+        "nofunction": null,
+    },
+}
+```
+
+
 ### Example
 ```javascript
 // define commandLineRun
@@ -68,6 +99,6 @@ commandLineRun({
 ### Run
 Invoking commandLineRun 
 1. gets the data from the command line, 
-2. find the matching command
+2. find the matching command (can use nested objects)
 3. execute the function specified in the action mapping object, passing the parameters from the command line
 
