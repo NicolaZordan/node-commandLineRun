@@ -44,8 +44,8 @@ The action mapping object to be passed is a simple object that to each element m
 
 ```javascript
 {
-    null: function (args) {     // null: default action function
-        console.log('Default execution of app, no parameters or null action: \n'+JSON.stringify(args)); 
+    null: function () {     // null: default action function
+        console.log('Default execution of app, no parameters or null action: \n',Array.from(arguments)); 
     }, 
     "log": console.log,
     "run": app.run,
@@ -72,8 +72,8 @@ If teh command entered in the command line does not match a valid function a mes
 
 ```javascript
 {
-    null: function (args) { 
-        console.log('Default execution of app, no parameters or  null action: \n'+JSON.stringify(args)); 
+    null: function () { 
+        console.log('Default execution of app, no parameters or  null action: \n',Array.from(arguments)); 
     }, 
     "log": console.log,
     "run": app.run,
