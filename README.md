@@ -21,6 +21,7 @@ commandLineRun allows you to specify what function should be run when a command 
 
 ### Examples form the command line
 Assuming your app has an app.js file
+- node app.js
 - node app.js log "write this in the log"
 - node app.js deleteKey 1234
 - node app.js test first second third
@@ -39,8 +40,13 @@ to use commandLineRun is simple
 ### Action mapping object to be passed
 The action mapping object to be passed is a simple object that to each element matches a function to execute, the property name will be used to identify the command from the command line that will execute the corresponding function
 
+- NOTE: The default action with no parameters passed, is associated to the null command
+
 ```javascript
 {
+    null: function (args) {     // null: default action function
+        console.log('Default execution of app, no parameters or null action: \n'+JSON.stringify(args)); 
+    }, 
     "log": console.log,
     "run": app.run,
     "startServer": app.start,
@@ -66,6 +72,9 @@ If teh command entered in the command line does not match a valid function a mes
 
 ```javascript
 {
+    null: function (args) { 
+        console.log('Default execution of app, no parameters or  null action: \n'+JSON.stringify(args)); 
+    }, 
     "log": console.log,
     "run": app.run,
     "startServer": app.start,
@@ -90,6 +99,7 @@ var commandLineRun=require('commandLineRun');
 
 // execute from the command line
 commandLineRun({
+    null: function () { console.log('default action') },
     "log": console.log,
     "write": function () { console.log("writing:",Array.from(arguments)); },
     "write1": function (first) { console.log("writing1:",first); },

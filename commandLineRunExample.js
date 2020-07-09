@@ -9,6 +9,9 @@ var commandLineRun=require('commandlinerun');
 
 // execuution
 commandLineRun({
+    null: function (args) { 
+        console.log('Default execution of app, no parameters or  null action: \n'+JSON.stringify(args)); 
+    }, 
     "logExample": console.log,
     "log": console.log,
     "write": function () { console.log("writing:",Array.from(arguments)); },

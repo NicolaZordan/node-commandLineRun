@@ -37,6 +37,7 @@ var commandLineRun = {
     fn.apply(null,params);
   },
   findFunction: function (cmd, commands) {
+    // null cmd, will match null element in commands to execute the default action with no parameters
     if (commands==null) commands=commandLineRun.commands;
     var fn=commands[cmd];
     if (fn==null) {
@@ -84,6 +85,9 @@ module.exports=commandLineRun.run;
 // execution
 var commandLineRun=require('commandLineRun');
 commandLineRun({
+    null: function (args) { 
+        console.log('Default execution of app, no parameters or  null action: \n'+JSON.stringify(args)); 
+    }, 
     "logExample": console.log,
     "sendStaticFiles": ccc.sendStaticFiles,
     "startSoapWebService": ccc.startSoapWebService,
