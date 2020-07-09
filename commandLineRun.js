@@ -85,8 +85,8 @@ module.exports=commandLineRun.run;
 // execution
 var commandLineRun=require('commandLineRun');
 commandLineRun({
-    null: function (args) { 
-        console.log('Default execution of app, no parameters or  null action: \n'+JSON.stringify(args)); 
+    null: function () { 
+        console.log('Default execution of app, no parameters or  null action: \n',Array.from(arguments)); 
     }, 
     "logExample": console.log,
     "sendStaticFiles": ccc.sendStaticFiles,
